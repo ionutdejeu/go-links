@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repoapp/sdk",
+  "version": "0.21.2",
+  "description": "Typescript SDK for gatherify",
+  "license": "GNU Affero General Public License version 3",
+  "keywords": [
+    "gatherify",
+    "sdk"
+  ],
+  "main": "./src/index.ts",
+  "type": "module",
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "exports": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    
+    "tsx": "^4.7.1",
+    "vite": "^5.1.0",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "run": "tsx src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier . --write --ignore-path ../../.prettierignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoarder-app/hoarder.git",
+    "directory": "packages/sdk"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@repo/eslint-config/base"
+    ],
+    "ignorePatterns": [
+      "src/hoarder-api.d.ts"
+    ]
+  },
+  "prettier": "@repo/prettier-config",
+  "dependencies": {
+    "openapi-fetch": "^0.13.3"
+  }
+}

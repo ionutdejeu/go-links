@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/typescript-config",
+  "extends": "@repo/typescript-config/base.json",
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  }
+}

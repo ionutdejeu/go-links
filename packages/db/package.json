@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repo/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "migrate": "tsx migrate.ts",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@auth/core": "^0.27.0",
+    "@repo/shared": "workspace:*",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.1",
+    "drizzle-orm": "^0.38.3",
+    "tsx": "^4.7.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+ 
+    "@types/better-sqlite3": "^7.6.11",
+    "drizzle-kit": "^0.30.01"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@repo/eslint-config/base"
+    ]
+  },
+  "prettier": "@repo/prettier-config"
+}

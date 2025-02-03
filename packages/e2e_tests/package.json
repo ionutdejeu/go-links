@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repo/e2e_tests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "format": "prettier . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier . --write --ignore-path ../../.prettierignore",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@repo/trpc": "workspace:*",
+    "@repoapp/sdk": "workspace:*",
+    "superjson": "^2.2.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "vitest": "^1.3.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@repo/eslint-config/base"
+    ]
+  },
+  "prettier": "@repo/prettier-config"
+}

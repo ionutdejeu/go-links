@@ -1,0 +1,4 @@
+.turbo/**
+src/**
+vite.config.mts
+typescript-config.json
