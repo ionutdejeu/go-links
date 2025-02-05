@@ -2,7 +2,6 @@
 
 import { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { Button } from "@repo/ui/button";
-import { Workbox } from "workbox-window";
 
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
 
@@ -15,17 +14,6 @@ export default function Web() {
     setResponse(null);
     setError(undefined);
   }, [name]);
-
-  useEffect(() => {
-    if (
-      !("serviceWorker" in navigator)) {
-      console.warn("Pwa support is disabled");
-      return;
-    }
-
-    const wb = new Workbox("sw.js", { scope: "/" });
-    wb.register();
-  }, []);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);

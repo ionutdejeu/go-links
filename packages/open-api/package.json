@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repo/open-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.2.0",
+    "@repo/shared": "workspace:*",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "tsx": "^4.7.1"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "generate": "tsx index.ts",
+    "format": "prettier . --ignore-path ../../.prettierignore",
+    "lint": "eslint ."
+  },
+  "main": "index.ts",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@repo/eslint-config/base"
+    ]
+  },
+  "prettier": "@repo/prettier-config"
+}
