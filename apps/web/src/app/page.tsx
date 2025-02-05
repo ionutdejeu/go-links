@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, ChangeEvent, FormEvent } from "react";
-import { Button } from "@repo/ui/button"; 
+import { Button } from "@repo/ui/button";
 
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
 
@@ -14,7 +14,6 @@ export default function Web() {
     setResponse(null);
     setError(undefined);
   }, [name]);
- 
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
